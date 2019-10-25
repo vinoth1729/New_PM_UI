@@ -1,0 +1,108 @@
+.add-user {
+    margin: 10px 160px;
+    padding: 0 15px 45px 15px;
+    border: solid 1px #b3b1b1;
+    border-radius: 3px;
+  
+    .field-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 160px;
+    padding: 0 15px 45px 15px;
+    border: solid 1px #b3b1b1;
+    border-radius: 3px;
+  }
+
+  .date-picker-form-control-container {
+      display: flex;
+
+      .date-picker-checkbox {
+        padding: 20px 20px 20px 0;
+      }
+
+      .date-picker-container {
+          width: 40%;
+      }
+
+      .date-picker1-container {
+        width: 20%;
+    }
+  }
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 10px;
+  }
+  
+  .mat-slider-horizontal {
+    width: 300px;
+  }
+  
+  .mat-slider-vertical {
+    height: 300px;
+  }
+
+  .sort-box {
+    display: flex;
+
+    button {
+      margin-left: 15px;
+    }
+  }
+
+  .user-list {
+    margin-top:30px;
+    .user {
+      display: flex;
+      border: solid 1px #cecece;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      
+      .user-details {
+        width: 80%;
+
+        .header {
+          margin-bottom: 15px;
+        }
+
+        .details {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 15px;
+        }
+
+        .property-name {
+          font-weight: 600;
+        }
+      }
+      .priority {
+        width: 10%;
+      }
+
+      .actions {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+  }

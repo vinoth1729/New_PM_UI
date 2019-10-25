@@ -1,0 +1,53 @@
+<div class="add-task">
+  <h1 align=center> Add Task </h1>
+
+  <div class="task-form">
+    <div class="field-container">
+      <p>Project</p>
+      <mat-form-field>
+        <input matInput placeholder="">
+      </mat-form-field>
+      <button mat-raised-button>Search</button>
+    </div>
+    <div class="field-container">
+      <p>Task</p>
+      <mat-form-field>
+        <input matInput placeholder="">
+      </mat-form-field>
+    </div>
+    <div class="field-container">
+      <p>Priority</p>
+      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="50"></mat-slider>
+    </div>
+    <div class="date-picker-form-control-container">
+        <div class="date-picker-container">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Start Date" [formControl]="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker2" placeholder="End Date" [formControl]="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    <div class="field-container">
+      <p>Parent Task</p>
+      <mat-form-field>
+        <input matInput placeholder="">
+      </mat-form-field>
+      <button mat-raised-button>Search</button>
+    </div>
+    <div class="field-container">
+      <p>User</p>
+      <mat-form-field>
+        <input matInput placeholder="">
+      </mat-form-field>
+      <button mat-raised-button>Search</button>
+    </div>
+  </div>
+</div>

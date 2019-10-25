@@ -1,0 +1,49 @@
+<div class="view-task">
+  <h1 align=center> View Task </h1>
+
+  <div class="task-form">
+    <div class="field-container">
+      <mat-form-field>
+        <input matInput placeholder="Project">
+      </mat-form-field>
+      <button mat-raised-button>Search</button>
+    </div>
+  </div>
+
+  <div class="task-list-container">
+      <div class="sort-box" layout="row">
+          <div>Sort: </div>
+          <button (click)="sortBy('startDate')" mat-raised-button color="primary">Start Date</button>
+          <button (click)="sortBy('endDate')" mat-raised-button color="primary">End Date</button>
+          <button (click)="sortBy('priority')" mat-raised-button color="primary">Priority</button>
+          <button (click)="sortBy('completed')" mat-raised-button color="primary">Completed</button>
+      </div>
+      <br>
+      <mat-divider></mat-divider>
+      <div class="task-list">
+          <div *ngFor="let task of tasks" class="task">
+              <div class="task-details">
+                <table>
+                  <thead>
+                    <th>Task</th>
+                    <th>Parent</th>
+                    <th>Priority</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th></th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <td>{{task.task}}</td>
+                    <td>{{task.parentTask}}</td>
+                    <td>{{task.priority}}</td>
+                    <td>{{task.startDate}}</td>
+                    <td>{{task.endDate}}</td>
+                    <td><button mat-raised-button color="primary">Edit</button></td>
+                    <td><button mat-raised-button color="primary">End Task</button></td>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+      </div>
+</div>

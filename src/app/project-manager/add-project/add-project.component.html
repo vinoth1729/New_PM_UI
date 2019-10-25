@@ -1,0 +1,105 @@
+<div class="example-container">
+  <h1 align=center>Add Project</h1>
+  <mat-form-field>
+    <input matInput placeholder="Project">
+  </mat-form-field>
+
+  <div class="date-picker-form-control-container">
+    <div class="date-picker-checkbox">
+      <mat-checkbox [(ngModel)]="setDate">Set start date and end date</mat-checkbox>
+    </div>
+    <div class="date-picker-container">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Start Date" [formControl]="startDate"
+          [disabled]="!setDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" placeholder="End Date" [formControl]="endDate" [disabled]="!setDate">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="date-picker-form-control-container">
+    <div>Priority : </div>
+    <div>
+      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="50"></mat-slider>
+    </div>
+  </div>
+
+  <div class="date-picker-form-control-container">
+    <div class="date-picker-container">
+
+      Manager: {{animal}}
+
+    </div>
+    <div class="date-picker-container">
+      <mat-form-field>
+        <input matInput placeholder="">
+      </mat-form-field>
+    </div>
+    <div class="date-picker-checkbox">
+      <button mat-raised-button (click)="openDialog()">Search</button>
+    </div>
+  </div>
+
+  <div class="date-picker-form-control-container">
+    <div class="date-picker1-container">
+      <button mat-raised-button color="primary">Add</button>
+    </div>
+    <div class="date-picker1-container">
+      <button mat-raised-button color="primary">Reset</button>
+    </div>
+  </div>
+  <br>
+  <mat-divider></mat-divider>
+
+  <mat-form-field>
+    <input matInput placeholder="Search">
+  </mat-form-field>
+
+  <div class="project-list-container">
+    <div class="sort-box" layout="row">
+      <div>Sort: </div>
+      <button (click)="sortBy('startDate')" mat-raised-button color="primary">Start date</button>
+      <button (click)="sortBy('endDate')" mat-raised-button color="primary">End date</button>
+      <button (click)="sortBy('priority')" mat-raised-button color="primary">Priority</button>
+      <button (click)="sortBy('completed')" mat-raised-button color="primary">Completed</button>
+    </div>
+
+    <div class="project-list">
+      <div *ngFor="let project of projects" class="project">
+        <div class="project-details">
+          <p class="header">
+            <span class="property-name">Project:</span> {{ project.name }}
+          </p>
+          <div class="details">
+            <div>
+              <p><span class="property-name">No of Tasks:</span> {{ project.noOfTasks }} </p>
+              <p><span class="property-name">Start Date:</span> {{ project.startDate | date:'dd-MM-yyyy' }}</p>
+            </div>
+            <div>
+              <p> <span class="property-name">Completed:</span> {{ project.completed }}</p>
+              <p> <span class="property-name">End Date:</span> {{ project.endDate | date:'dd-MM-yyyy' }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="priority">
+          <h5>
+            Priority
+          </h5>
+          {{ project.priority }}
+        </div>
+        <div class="actions">
+          <button mat-raised-button color="primary">Update</button>
+          <button mat-raised-button color="primary">Suspend</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

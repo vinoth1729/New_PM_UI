@@ -1,0 +1,29 @@
+.add-task {
+  margin: 10px 160px;
+  padding: 0 15px 45px 15px;
+  border: solid 1px #b3b1b1;
+  border-radius: 3px;
+
+  .field-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+.date-picker-form-control-container {
+    display: flex;
+
+    .date-picker-checkbox {
+      padding: 20px 20px 20px 0;
+    }
+
+    .date-picker-container {
+        width: 40%;
+    }
+
+    .date-picker1-container {
+      width: 20%;
+  }
+}

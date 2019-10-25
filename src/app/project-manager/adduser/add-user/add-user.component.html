@@ -1,0 +1,56 @@
+<div class="add-user">
+    <h1 align=center>
+        Add User
+    </h1>
+    <div class="field-container">
+        <mat-form-field>
+            <input matInput placeholder="First Name">
+        </mat-form-field>
+    </div>
+    <div class="field-container">
+        <mat-form-field>
+            <input matInput placeholder="Last Name">
+        </mat-form-field>
+    </div>
+
+    <div class="field-container">
+        <mat-form-field>
+            <input matInput placeholder="Employee ID">
+        </mat-form-field>
+    </div>
+    <div class="date-picker-form-control-container">
+        <div class="date-picker1-container">
+            <button mat-raised-button color="primary">Add</button>
+        </div>
+        <div class="date-picker1-container">
+            <button mat-raised-button color="primary">Reset</button>
+        </div>
+    </div>
+    <br>
+    <mat-divider></mat-divider>
+    <mat-form-field>
+        <input matInput placeholder="Search">
+    </mat-form-field>
+
+    <div class="user-list-container">
+        <div class="sort-box" layout="row">
+            <div>Sort: </div>
+            <button (click)="sortBy('firstName')" mat-raised-button color="primary">First name</button>
+            <button (click)="sortBy('lastName')" mat-raised-button color="primary">Last name</button>
+            <button (click)="sortBy('id')" mat-raised-button color="primary">ID</button>
+        </div>
+
+        <div class="user-list">
+            <div *ngFor="let user of users" class="user">
+                <div class="user-details">
+                    <p class="header"><span class="property-name">First Name:</span> {{ user.firstName }}</p>
+                    <p class="header"><span class="property-name">Last Name:</span> {{ user.lastName }}</p>
+                    <p class="header"><span class="property-name">ID:</span> {{ user.id }}</p>
+                </div>
+                <div class="actions">
+                    <button mat-raised-button color="primary">Edit</button>
+                    <button mat-raised-button color="primary">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
